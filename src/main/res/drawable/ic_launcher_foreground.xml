@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Crescent -->
+    <path
+        android:fillColor="#D4AF37"
+        android:fillType="evenOdd"
+        android:pathData="M26,54 a27,27 0 1,0 54,0 a27,27 0 1,0 -54,0 Z M39,54 a25,25 0 1,0 50,0 a25,25 0 1,0 -50,0 Z" />
+    <!-- Sparkle -->
+    <path
+        android:fillColor="#F3E5AB"
+        android:pathData="M72,30 L75,37 L82,40 L75,43 L72,50 L69,43 L62,40 L69,37 Z" />
+</vector>

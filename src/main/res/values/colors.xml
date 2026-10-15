@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deep emerald canvas -->
+    <color name="emerald_ink">#FF060D0C</color>
+    <color name="emerald_deep">#FF0A1312</color>
+    <color name="emerald_surface">#FF132220</color>
+    <color name="emerald_surface_variant">#FF1B2E2B</color>
+    <color name="emerald_outline">#FF1A2E2B</color>
+    <color name="emerald_completed">#FF122A26</color>
+
+    <!-- Royal gold accent system -->
+    <color name="gold_primary">#FFD4AF37</color>
+    <color name="gold_shimmer">#FFF3E5AB</color>
+    <color name="gold_muted">#FF9E8435</color>
+
+    <!-- Text tones -->
+    <color name="text_primary">#FFF5F7F6</color>
+    <color name="text_secondary">#FFEAEAEA</color>
+    <color name="text_muted">#FF7A8F8B</color>
+    <color name="danger_rose">#FFE05252</color>
+
+    <color name="transparent">#00000000</color>
+</resources>

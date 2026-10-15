@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ahmoodiy Prayer</string>
+    <string name="app_tagline">Smart Tasbeeh &amp; Egypt Prayer Times</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_tasbeeh">Tasbeeh</string>
+    <string name="nav_athkar">Athkar</string>
+    <string name="nav_prayers">Prayers</string>
+    <string name="nav_duas">Duas</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Notifications -->
+    <string name="channel_prayer_name">Prayer times</string>
+    <string name="channel_prayer_desc">Adhan and pre-prayer reminders</string>
+    <string name="adhan_now_title">%1$s prayer time</string>
+    <string name="adhan_now_text">It is time for %1$s prayer</string>
+    <string name="adhan_pre_title">%1$s in %2$d minutes</string>
+    <string name="adhan_pre_text">Get ready for %1$s prayer</string>
+
+    <!-- Common actions -->
+    <string name="action_close">Close</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="action_search">Search</string>
+    <string name="action_back">Back</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_ok">OK</string>
+</resources>

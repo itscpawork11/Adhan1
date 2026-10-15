@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">المسبحة الذكية ومواقيت صلاة مصر</string>
+    <string name="app_tagline">حصن المسلم كاملاً أوفلاين · الهيئة العامة للمساحة</string>
+
+    <!-- شريط التنقل السفلي -->
+    <string name="nav_tasbeeh">المسبحة</string>
+    <string name="nav_athkar">الأذكار</string>
+    <string name="nav_prayers">الصلوات</string>
+    <string name="nav_duas">الأدعية</string>
+    <string name="nav_settings">الإعدادات</string>
+
+    <!-- الإشعارات -->
+    <string name="channel_prayer_name">مواقيت الصلاة</string>
+    <string name="channel_prayer_desc">الأذان والتنبيهات المسبقة للصلاة</string>
+    <string name="adhan_now_title">حان الآن وقت صلاة %1$s</string>
+    <string name="adhan_now_text">حان الآن وقت صلاة %1$s</string>
+    <string name="adhan_pre_title">صلاة %1$s بعد %2$d دقيقة</string>
+    <string name="adhan_pre_text">استعد لصلاة %1$s</string>
+
+    <!-- أوامر عامة -->
+    <string name="action_close">إغلاق</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_confirm">تأكيد</string>
+    <string name="action_reset">تصفير</string>
+    <string name="action_copy">نسخ</string>
+    <string name="action_share">مشاركة</string>
+    <string name="action_search">بحث</string>
+    <string name="action_back">رجوع</string>
+    <string name="action_retry">إعادة المحاولة</string>
+    <string name="action_ok">حسناً</string>
+</resources>
