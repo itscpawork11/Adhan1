@@ -114,14 +114,38 @@ object EgyptPrayerEngine {
      * Mirrors the original `Date#getMonth` (0-based) and `Date#getDay` semantics.
      */
     internal fun isEgyptianDst(date: Calendar): Boolean {
-        val month = date.get(Calendar.MONTH) // 0-based, matching JS
+        val month = date.get(Calendar.MONTH)
+        val year = date.get(Calendar.YEAR)
+        val day = date.get(Calendar.DAY_OF_MONTH)
         return when {
-            month > 3 && month < 9 -> true
-            month == 3 -> date.get(Calendar.DAY_OF_MONTH) >= 25 &&
-                date.get(Calendar.DAY_OF_WEEK) >= Calendar.FRIDAY
-            month == 9 -> date.get(Calendar.DAY_OF_MONTH) < 25
+            month in Calendar.MAY..Calendar.SEPTEMBER -> true
+            month == Calendar.APRIL -> day >= lastWeekdayOfMonth(
+                year, Calendar.APRIL, Calendar.FRIDAY, date
+            )
+            month == Calendar.OCTOBER -> day <= lastWeekdayOfMonth(
+                year, Calendar.OCTOBER, Calendar.THURSDAY, date
+            )
             else -> false
         }
+    }
+
+    /** Returns the day-of-month for the final occurrence of [weekday] in [month]. */
+    private fun lastWeekdayOfMonth(
+        year: Int,
+        month: Int,
+        weekday: Int,
+        reference: Calendar,
+    ): Int {
+        val lastDay = Calendar.getInstance(reference.timeZone).apply {
+            clear()
+            set(Calendar.YEAR, year)
+            set(Calendar.MONTH, month)
+            set(Calendar.DAY_OF_MONTH, getActualMaximum(Calendar.DAY_OF_MONTH))
+        }
+        while (lastDay.get(Calendar.DAY_OF_WEEK) != weekday) {
+            lastDay.add(Calendar.DAY_OF_MONTH, -1)
+        }
+        return lastDay.get(Calendar.DAY_OF_MONTH)
     }
 
     private fun toTimestamp(date: Calendar, hoursDecimal: Double): Long {

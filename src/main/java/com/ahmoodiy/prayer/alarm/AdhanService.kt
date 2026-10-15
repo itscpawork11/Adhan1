@@ -47,6 +47,25 @@ class AdhanService : Service() {
         }
 
         NotificationChannels.ensureCreated(this)
+        // Publish the foreground notification immediately; DataStore I/O must not delay
+        // Android's foreground-service start deadline.
+        val initialNotification = NotificationFactory.buildPrayerNotification(
+            context = this,
+            prayerKey = prayerKey,
+            isPreReminder = isPreReminder,
+            minutesBefore = 15,
+        )
+        val foregroundType = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
+        } else {
+            0
+        }
+        ServiceCompat.startForeground(
+            this,
+            NotificationChannels.ADHAN_SERVICE_NOTIFICATION_ID,
+            initialNotification,
+            foregroundType,
+        )
         scope.launch { deliver(prayerKey, isPreReminder, startId) }
         return START_NOT_STICKY
     }
