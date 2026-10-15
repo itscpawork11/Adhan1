@@ -25,15 +25,40 @@ class Haptics(context: Context) {
     val isAvailable: Boolean get() = vibrator?.hasVibrator() == true
 
     /** A crisp tap for every bead. */
-    fun tap() = vibrate(VibrationEffect.createOneShot(16L, 60))
+    fun tap() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrate(VibrationEffect.createOneShot(16L, 60))
+        } else {
+            @Suppress("DEPRECATION")
+            vibrator?.vibrate(16L)
+        }
+    }
 
     /** Slightly stronger feedback when a cycle/target completes. */
-    fun cycleComplete() = vibrate(VibrationEffect.createOneShot(38L, 110))
+    fun cycleComplete() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrate(VibrationEffect.createOneShot(38L, 110))
+        } else {
+            @Suppress("DEPRECATION")
+            vibrator?.vibrate(38L)
+        }
+    }
 
     /** Two-pulse pattern used for finished targets. */
-    fun doubleTap() = vibrate(
-        VibrationEffect.createWaveform(longArrayOf(0L, 26L, 70L, 26L), intArrayOf(0, 120, 0, 120), -1),
-    )
+    fun doubleTap() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrate(
+                VibrationEffect.createWaveform(
+                    longArrayOf(0L, 26L, 70L, 26L),
+                    intArrayOf(0, 120, 0, 120),
+                    -1,
+                ),
+            )
+        } else {
+            @Suppress("DEPRECATION")
+            vibrator?.vibrate(longArrayOf(0L, 26L, 70L, 26L), -1)
+        }
+    }
 
     private fun vibrate(effect: VibrationEffect) {
         val target = vibrator ?: return
