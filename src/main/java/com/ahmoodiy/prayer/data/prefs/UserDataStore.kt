@@ -12,6 +12,7 @@ import com.ahmoodiy.prayer.domain.model.TasbeehStats
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 private val Context.userDataStore: DataStore<Preferences> by preferencesDataStore(name = "user_data")
