@@ -157,7 +157,7 @@ fun TasbeehScreen(modifier: Modifier = Modifier) {
 
                 VirtueCard(
                     virtue = state.phrase.virtue,
-                    count = state.phrase.count,
+                    count = state.phrase.defaultTarget,
                     scale = scale,
                 )
 

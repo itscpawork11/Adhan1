@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.core.content.getSystemService
+import com.ahmoodiy.prayer.R
 
 /** Central place for every notification channel the app publishes to. */
 object NotificationChannels {

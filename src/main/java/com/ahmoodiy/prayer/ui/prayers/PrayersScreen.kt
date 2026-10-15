@@ -810,7 +810,7 @@ private fun hijriDate(millis: Long): String? = runCatching {
     val month = calendar.getDisplayName(
         java.util.Calendar.MONTH,
         java.util.Calendar.LONG,
-        Locale("ar", "EG"),
+        android.icu.util.ULocale("ar_EG"),
     ).orEmpty()
 
     "$day $month $year هـ"

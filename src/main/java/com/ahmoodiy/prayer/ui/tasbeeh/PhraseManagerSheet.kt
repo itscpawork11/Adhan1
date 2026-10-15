@@ -20,6 +20,7 @@ import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -46,6 +47,7 @@ import com.ahmoodiy.prayer.util.Tashkeel
  * Bottom sheet listing every available tasbeeh formula (defaults + user created),
  * with an inline delete affordance for custom entries.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhraseManagerSheet(
     phrases: List<TasbeehPhrase>,
