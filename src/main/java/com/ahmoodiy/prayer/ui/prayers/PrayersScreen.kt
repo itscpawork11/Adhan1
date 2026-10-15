@@ -805,13 +805,13 @@ private fun hijriDate(millis: Long): String? = runCatching {
     calendar.setCalculationType(android.icu.util.IslamicCalendar.CalculationType.ISLAMIC_UMALQURA)
     calendar.timeInMillis = millis
 
-    val day = calendar.get(java.util.Calendar.DAY_OF_MONTH)
-    val year = calendar.get(java.util.Calendar.YEAR)
-    val month = calendar.getDisplayName(
-        android.icu.util.Calendar.MONTH,
-        android.icu.util.Calendar.LONG,
-        android.icu.util.ULocale("ar_EG"),
-    ).orEmpty()
+    val day = calendar.get(android.icu.util.Calendar.DAY_OF_MONTH)
+    val year = calendar.get(android.icu.util.Calendar.YEAR)
+
+    // Use ICU SimpleDateFormat to get the localized month name from the IslamicCalendar instance.
+    val monthFormatter = android.icu.text.SimpleDateFormat("MMMM", android.icu.util.ULocale("ar_EG"))
+    monthFormatter.calendar = calendar
+    val month = monthFormatter.format(java.util.Date(millis))
 
     "$day $month $year هـ"
 }.getOrNull()
