@@ -808,8 +808,8 @@ private fun hijriDate(millis: Long): String? = runCatching {
     val day = calendar.get(java.util.Calendar.DAY_OF_MONTH)
     val year = calendar.get(java.util.Calendar.YEAR)
     val month = calendar.getDisplayName(
-        java.util.Calendar.MONTH,
-        java.util.Calendar.LONG,
+        android.icu.util.Calendar.MONTH,
+        android.icu.util.Calendar.LONG,
         android.icu.util.ULocale("ar_EG"),
     ).orEmpty()
 
